@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirror — your thinking space</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <meta property="og:title" content="Mirror — your thinking space" />
+  <meta property="og:description" content="A free-form thinking space. No structure imposed — just what's true for you." />
+  <meta property="og:image" content="og-image.png" />
+  <meta property="og:type" content="website" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="bg-texture" aria-hidden="true"></div>
+
+  <header class="header">
+    <div class="header-inner">
+      <div class="logo">
+        <span class="logo-mark">◑</span>
+        <span class="logo-text">mirror</span>
+      </div>
+      <nav class="header-actions">
+        <button class="action-btn" id="import-btn" title="Import entries">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="17 8 12 3 7 8"/><line x1="12" y1="3" x2="12" y2="15"/></svg>
+          Import
+        </button>
+        <button class="action-btn" id="export-btn" title="Export entries">
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+          Export
+        </button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="main">
+
+    <section class="compose-section">
+      <h1 class="prompt-label" id="prompt-label">What's up? (Or what's lacking in your life right now?)</h1>
+      <div class="compose-box">
+        <textarea
+          id="main-input"
+          class="compose-input"
+          placeholder="A feeling, a want, a tension, a dream — anything…"
+          rows="3"
+          aria-label="Write a reflection"
+        ></textarea>
+        <div class="compose-footer">
+          <span class="compose-hint">Enter to reflect &nbsp;·&nbsp; Shift+Enter for new line</span>
+          <button class="reflect-btn" id="reflect-btn">
+            Reflect
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="entries-section" id="entries-section">
+
+      <div class="filter-bar" id="filter-bar" aria-label="Filter by theme"></div>
+
+      <div class="stats-bar" id="stats-bar"></div>
+
+      <div class="empty-state" id="empty-state" aria-live="polite">
+        <div class="empty-icon">◑</div>
+        <p>Your reflections will surface here.</p>
+        <p class="empty-sub">No structure imposed — just what's true for you.</p>
+      </div>
+
+      <div class="cards" id="cards" role="list"></div>
+
+    </section>
+
+  </main>
+
+  <!-- Import modal -->
+  <div class="modal-overlay" id="modal-overlay" role="dialog" aria-modal="true" aria-labelledby="modal-title" style="display:none;">
+    <div class="modal">
+      <h2 class="modal-title" id="modal-title">Import reflections</h2>
+      <p class="modal-body">Paste the contents of a mirror export file. This will merge with your existing entries — nothing is overwritten.</p>
+      <textarea class="modal-input" id="import-text" rows="6" placeholder='{"version":1,"entries":[…]}'></textarea>
+      <div class="modal-actions">
+        <button class="modal-cancel" id="modal-cancel">Cancel</button>
+        <button class="modal-confirm" id="modal-confirm">Import</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
