@@ -4,6 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mirror — your thinking space</title>
+  <link rel="manifest" href="manifest.json" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="default" />
+  <meta name="apple-mobile-web-app-title" content="Mirror" />
+  <meta name="theme-color" content="#faf9f7" />
   <link rel="icon" type="image/png" href="favicon.png" />
   <meta property="og:title" content="Mirror — your thinking space" />
   <meta property="og:description" content="A free-form thinking space. No structure imposed — just what's true for you." />
@@ -91,5 +97,12 @@
   </div>
 
   <script src="app.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', () => {
+        navigator.serviceWorker.register('./sw.js');
+      });
+    }
+  </script>
 </body>
 </html>
