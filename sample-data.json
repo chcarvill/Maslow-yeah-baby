@@ -1,0 +1,42 @@
+{
+  "version": 1,
+  "app": "mirror",
+  "exported": "2026-06-02T00:00:00.000Z",
+  "entries": [
+    {
+      "id": "sample001",
+      "text": "I want to build something that genuinely helps people see themselves more clearly.",
+      "theme": "purpose",
+      "ts": 1748822400000,
+      "done": false
+    },
+    {
+      "id": "sample002",
+      "text": "Financial stability feels far away right now, but I notice that worrying about it drains energy I could use to create.",
+      "theme": "safety",
+      "ts": 1748736000000,
+      "done": false
+    },
+    {
+      "id": "sample003",
+      "text": "I feel most alive when I'm in deep conversation with someone who's genuinely curious.",
+      "theme": "belong",
+      "ts": 1748649600000,
+      "done": false
+    },
+    {
+      "id": "sample004",
+      "text": "Sleep has been inconsistent. Everything feels harder when I'm running on empty.",
+      "theme": "body",
+      "ts": 1748563200000,
+      "done": true
+    },
+    {
+      "id": "sample005",
+      "text": "I want to be recognised for the depth of my thinking, not just the surface outputs.",
+      "theme": "esteem",
+      "ts": 1748476800000,
+      "done": false
+    }
+  ]
+}
